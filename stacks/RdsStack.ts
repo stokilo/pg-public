@@ -1,8 +1,7 @@
 import { Config, StackContext, use } from '@serverless-stack/resources'
 import * as ec2 from 'aws-cdk-lib/aws-ec2'
 import * as rds from 'aws-cdk-lib/aws-rds'
-import * as route53 from 'aws-cdk-lib/aws-route53'
-import { Duration, RemovalPolicy } from 'aws-cdk-lib'
+import { RemovalPolicy } from 'aws-cdk-lib'
 import { RetentionDays } from 'aws-cdk-lib/aws-logs'
 import { VpcStack } from './VpcStack'
 
@@ -29,25 +28,6 @@ export function RdsStack({ stack }: StackContext) {
 
   //todo: for testing
   dbInstance.connections.allowFromAnyIpv4(ec2.Port.allTraffic(), 'Open to the world')
-
-  // const privateHostedZone = new route53.PrivateHostedZone(stack, 'private-hosted-zone', {
-  //   zoneName: 'rds.com',
-  //   vpc: vpcStack.vpc,
-  // })
-
-  // new route53.CnameRecord(stack, 'reader.rds.com', {
-  //   recordName: 'reader',
-  //   domainName: dbInstance.dbInstanceEndpointAddress,
-  //   ttl: Duration.seconds(300),
-  //   zone: privateHostedZone,
-  // })
-  //
-  // new route53.CnameRecord(stack, 'writer.rds.com', {
-  //   recordName: 'writer',
-  //   domainName: dbInstance.dbInstanceEndpointAddress,
-  //   ttl: Duration.seconds(300),
-  //   zone: privateHostedZone,
-  // })
 
   return {
     rds: dbInstance,
