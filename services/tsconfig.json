@@ -1,0 +1,22 @@
+{
+  "extends": "../tsconfig.json",
+  "include": [
+    "fn",
+    "gql",
+    "s3"
+  ],
+  "compilerOptions": {
+    "module": "esnext",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "@pg/core/*": [
+        "./core/*"
+      ]
+    },
+    "lib": [
+      "dom"
+    ]
+  }
+}

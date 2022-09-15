@@ -1,0 +1,61 @@
+{
+  "name": "pg",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node sso.js && sst start",
+    "build": "sst build",
+    "deploy": "sst deploy",
+    "remove": "sst remove",
+    "console": "sst console",
+    "typecheck": "tsc --noEmit",
+    "test": "sst load-config -- vitest run",
+    "gen": "hygen",
+    "sso": "node sso.js",
+    "migrate": "node sso.js && node migrate.js",
+    "codegen": "NODE_NO_WARNINGS=1 graphql-codegen --config codegen.yml"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "2.11.8",
+    "@graphql-codegen/introspection": "2.2.1",
+    "@graphql-codegen/typescript": "2.7.3",
+    "@graphql-codegen/typescript-operations": "2.5.3",
+    "@graphql-codegen/typescript-urql": "^3.6.4",
+    "@serverless-stack/cli": "^1.9.1",
+    "@serverless-stack/resources": "^1.9.1",
+    "@tsconfig/node16": "^1.0.3",
+    "aws-cdk-lib": "2.32.0",
+    "hygen": "^6.2.8",
+    "prettier": "^2.7.1",
+    "shelljs": "^0.8.5",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.7.4",
+    "vitest": "^0.22.1"
+  },
+  "workspaces": [
+    "services",
+    "graphql",
+    "web"
+  ],
+  "overrides": {
+    "graphql": "16.5.0"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": "latest",
+      "sourceType": "module"
+    },
+    "extends": [
+      "eslint:recommended",
+      "typescript"
+    ]
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.159.0",
+    "@aws-sdk/client-secrets-manager": "^3.154.0",
+    "@aws-sdk/lib-storage": "^3.163.0",
+    "graphql": "15.8.0",
+    "pg": "^8.8.0",
+    "postgraphile": "^4.12.11"
+  }
+}

@@ -1,0 +1,14 @@
+overwrite: true
+schema: "generated/schema.gql"
+documents: "web/**/*.tsx"
+generates:
+  ./generated/api.d.ts:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+#      - "typescript-urql"
+  ./generated/graphql.schema.json:
+    plugins:
+      - "introspection"
+hooks:
+  afterAllFileWrite: ['prettier --write']
