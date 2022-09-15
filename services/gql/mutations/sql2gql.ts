@@ -1,4 +1,4 @@
-import { GraphQLResolveInfo, GraphQLTypeResolver } from 'graphql'
+import { GraphQLResolveInfo } from 'graphql'
 import { GraphileHelpers } from 'graphile-utils/node8plus/fieldHelpers'
 import type { SQL } from 'graphile-build-pg'
 

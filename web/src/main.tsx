@@ -28,7 +28,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Navigate to="/sign" />} />
+        <Route path="/" element={<Navigate to="/view" />} />
         <Route path="view" element={<GraphqlView />} />
         <Route path="todo" element={<TodoForm />} />
       </Routes>
