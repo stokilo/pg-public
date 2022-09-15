@@ -60,7 +60,7 @@ Schema is generated under `generated/schema.gql`. Typescript models under `gener
 You can change database in the `stacks/migration/db/init.sql`, add new tables with relations 1-N, N-N, run
 `yarn migrate`. This will regenerate all typings and you can use viewer to query the data. 
 
-![img_1.png](img_1.png)
+![img.png](img.png)
 
 Only queries are generated from the database. Mutations are disabled and implemented in the Typescript (Lambda code). 
 
